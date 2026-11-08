@@ -2,7 +2,7 @@
 
 **Ultra-fast $6.3\,\mu\text{s}$ incremental $O(n)$ streaming JSON repair, 14-dialect Mermaid diagram healer, HTML5 sandbox balancer, and cardinality-bounded layout partitioner for Large Language Model (LLM) token streams.**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24044610.svg)](https://doi.org/10.5281/zenodo.24044610)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24045975.svg)](https://doi.org/10.5281/zenodo.24045975)
 [![Crates.io](https://img.shields.io/crates/v/polyglot-stream-heal.svg)](https://crates.io/crates/polyglot-stream-heal)
 [![Crates.io Downloads](https://img.shields.io/crates/d/polyglot-stream-heal.svg?label=crates.io%20downloads)](https://crates.io/crates/polyglot-stream-heal)
 [![PyPI](https://img.shields.io/pypi/v/polyglot-stream-heal.svg)](https://pypi.org/project/polyglot-stream-heal/)
@@ -12,7 +12,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davidhcar/polyglot_stream_heal/blob/main/examples/colab_quickstart.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-- **Author:** **David Charles Michael** ([ORCID: `0009-0007-8679-6941`](https://orcid.org/0009-0007-8679-6941) | [DOI: `10.5281/zenodo.24044610`](https://doi.org/10.5281/zenodo.24044610) | `davidchar@gmail.com`)
+- **Author:** **David Charles Michael** ([ORCID: `0009-0007-8679-6941`](https://orcid.org/0009-0007-8679-6941) | [DOI: `10.5281/zenodo.24045975`](https://doi.org/10.5281/zenodo.24045975) | `davidchar@gmail.com`)
 - **Drop-In High-Speed Replacement For:** `json-repair` (Python), `partial-json` (npm/Python), `jsonrepair` (JS/TS), and brittle regex Mermaid/Markdown stream sanitizers.
 - **Compatible With All Streaming LLM SDKs:** OpenAI (`chat.completions.create(stream=True)`), Anthropic Claude SSE streams, Google Gemini streaming, Vercel AI SDK (`useChat` / `streamText`), LangChain (`astream_events`), LlamaIndex, vLLM, and Ollama.
 
@@ -104,8 +104,8 @@ See [`CITATION.cff`](CITATION.cff), or cite:
   title   = {Linear-Time Incremental Pushdown Transduction and Cardinality-Bounded Layout Partitioning for Polyglot LLM Token Streams},
   author  = {Michael, David Charles},
   year    = {2026},
-  doi     = {10.5281/zenodo.24044610},
-  url     = {https://doi.org/10.5281/zenodo.24044610},
+  doi     = {10.5281/zenodo.24045975},
+  url     = {https://doi.org/10.5281/zenodo.24045975},
   note    = {ORCID: 0009-0007-8679-6941}
 }
 ```

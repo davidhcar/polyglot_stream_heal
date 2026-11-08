@@ -2,11 +2,11 @@ cff-version: 1.2.0
 message: "If you use polyglot-stream-heal in your research or software systems, please cite the companion paper and DOI below."
 title: "polyglot-stream-heal: Linear-Time Incremental Pushdown Transduction for Polyglot LLM Token Streams"
 version: 1.0.0
-doi: "10.5281/zenodo.24044610"
+doi: "10.5281/zenodo.24045975"
 date-released: 2026-11-07
 license: MIT
 repository-code: "https://github.com/davidhcar/polyglot_stream_heal"
-url: "https://doi.org/10.5281/zenodo.24044610"
+url: "https://doi.org/10.5281/zenodo.24045975"
 authors:
   - family-names: "Michael"
     given-names: "David Charles"
@@ -16,7 +16,7 @@ authors:
 preferred-citation:
   type: article
   title: "Linear-Time Incremental Pushdown Transduction and Cardinality-Bounded Layout Partitioning for Polyglot LLM Token Streams"
-  doi: "10.5281/zenodo.24044610"
+  doi: "10.5281/zenodo.24045975"
   authors:
     - family-names: "Michael"
       given-names: "David Charles"
