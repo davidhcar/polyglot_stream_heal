@@ -1,0 +1,23 @@
+# Git ignore rules for polyglot-stream-heal
+target/
+**/node_modules/
+**/__pycache__/
+*.pyc
+.env*
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/main.pdf
+
+# Ignore local build artifacts and internal helper scripts
+dist/
+AUTHORS.md
+PUBLISHING_GUIDE.md
+publish_packages.sh
+compile_pdf.sh
+build_and_verify.sh
+sync_metadata.mjs
+generate_provenance.mjs
+author.config.json
+bindings/js/pkg/

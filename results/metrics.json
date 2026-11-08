@@ -1,0 +1,330 @@
+{
+  "benchmarkName": "PolyglotStreamBench-1800",
+  "totalCases": 1800,
+  "seed": 20261105,
+  "macros": {
+    "BenchTotalCases": "1,800",
+    "OursOverallValidPct": "100.0%",
+    "OursTrackAPct": "100.0%",
+    "OursTrackBPct": "100.0%",
+    "OursTrackCPct": "100.0%",
+    "OursOverflowFreePct": "100.0%",
+    "RawOverallValidPct": "0.0%",
+    "PartialJsonOverallPct": "22.2%",
+    "JsonRepairOverallPct": "22.2%",
+    "RegexOverallValidPct": "15.5%",
+    "OursChunkPFiftyUs": "6.3",
+    "OursChunkPNinetyNineUs": "57.3",
+    "JsonRepairPFiftyUs": "386.8",
+    "PartialJsonPFiftyUs": "38.1",
+    "ScalingSpeedupThirtyTwoKB": "264.2x",
+    "PyVsOursSpeedup": "61.3x"
+  },
+  "tables": [
+    {
+      "id": "main_results",
+      "wide": true,
+      "caption": "End-to-end parse validity (%), zero-overflow invariant compliance (%), and streaming latency across PolyglotStreamBench-1800 (N = 1,800 streams across 3 tracks).",
+      "align": "lrrrrrrr",
+      "columns": [
+        "System / Baseline",
+        "Track A (%)",
+        "Track B (%)",
+        "Track C (%)",
+        "Overall (%)",
+        "Zero-Overflow (%)",
+        "p50 (us)",
+        "p99 (us)"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Raw Unhealed Stream",
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0",
+            "0.0"
+          ]
+        },
+        {
+          "cells": [
+            "partial-json (npm)",
+            "41.7",
+            "25.0",
+            "0.0",
+            "22.2",
+            "0.0",
+            "38.1",
+            "222.8"
+          ]
+        },
+        {
+          "cells": [
+            "json-repair (PyPI)",
+            "41.7",
+            "25.0",
+            "0.0",
+            "22.2",
+            "0.0",
+            "386.8",
+            "1858.7"
+          ]
+        },
+        {
+          "cells": [
+            "Multi-Pass Regex Baseline",
+            "46.5",
+            "0.0",
+            "0.0",
+            "15.5",
+            "0.0",
+            "20.2",
+            "116.1"
+          ]
+        },
+        {
+          "ruleBefore": true,
+          "cells": [
+            "HM-PDT (Full Re-Scan Ablation)",
+            "100.0",
+            "100.0",
+            "100.0",
+            "100.0",
+            "100.0",
+            "54.8",
+            "1516.2"
+          ]
+        },
+        {
+          "highlight": true,
+          "cells": [
+            "HM-PDT Incremental (Ours)",
+            "100.0",
+            "100.0",
+            "100.0",
+            "100.0",
+            "100.0",
+            "6.3",
+            "57.3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "modality_breakdown",
+      "wide": false,
+      "caption": "Per-modality grammar validity (%) on single-DSL tracks (Tracks A + B, N = 1,200).",
+      "align": "lrrr",
+      "columns": [
+        "System",
+        "JSON + Escaped Tool (%)",
+        "Mermaid 14-DSL (%)",
+        "HTML5 Sandbox (%)"
+      ],
+      "rows": [
+        {
+          "cells": [
+            "Raw Unhealed",
+            "0.0",
+            "0.0",
+            "0.0"
+          ]
+        },
+        {
+          "cells": [
+            "partial-json (npm)",
+            "66.7",
+            "0.0",
+            "0.0"
+          ]
+        },
+        {
+          "cells": [
+            "json-repair (PyPI)",
+            "66.7",
+            "0.0",
+            "0.0"
+          ]
+        },
+        {
+          "cells": [
+            "Regex Baseline",
+            "26.3",
+            "40.3",
+            "0.0"
+          ]
+        },
+        {
+          "ruleBefore": true,
+          "highlight": true,
+          "cells": [
+            "HM-PDT Incremental (Ours)",
+            "100.0",
+            "100.0",
+            "100.0"
+          ]
+        }
+      ]
+    }
+  ],
+  "plots": [
+    {
+      "id": "scaling_complexity",
+      "xLabel": "Stream Payload Size (KB, 64-byte SSE chunks)",
+      "yLabel": "Cumulative Stream Healing Time (ms)",
+      "logY": true,
+      "caption": "Empirical asymptotic scaling from 2 KB to 32 KB streaming outputs (log-scale y-axis). Stateless full-buffer re-scanning and multi-pass regex pipelines incur quadratic cumulative latency growth, whereas our Incremental HM-PDT maintains linear cumulative scaling.",
+      "series": [
+        {
+          "name": "HM-PDT Incremental (Ours)",
+          "mark": "*",
+          "points": [
+            [
+              2,
+              0.48
+            ],
+            [
+              4,
+              0.58
+            ],
+            [
+              8,
+              2.9
+            ],
+            [
+              16,
+              3.21
+            ],
+            [
+              32,
+              7.16
+            ]
+          ]
+        },
+        {
+          "name": "HM-PDT Stateless Re-Scan",
+          "mark": "square*",
+          "points": [
+            [
+              2,
+              13.64
+            ],
+            [
+              4,
+              32.88
+            ],
+            [
+              8,
+              106.13
+            ],
+            [
+              16,
+              422.98
+            ],
+            [
+              32,
+              1891.76
+            ]
+          ]
+        },
+        {
+          "name": "Multi-Pass Regex Baseline",
+          "mark": "triangle*",
+          "points": [
+            [
+              2,
+              2.85
+            ],
+            [
+              4,
+              8.6
+            ],
+            [
+              8,
+              72.28
+            ],
+            [
+              16,
+              135.64
+            ],
+            [
+              32,
+              572.61
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "rawStats": {
+    "raw": {
+      "label": "Raw Unhealed Stream",
+      "trackAPct": "0.0",
+      "trackBPct": "0.0",
+      "trackCPct": "0.0",
+      "overallPct": "0.0",
+      "overflowFreePct": "0.0",
+      "jsonPct": "0.0",
+      "mermaidPct": "0.0",
+      "htmlPct": "0.0"
+    },
+    "partial_json": {
+      "label": "partial-json (npm)",
+      "trackAPct": "41.7",
+      "trackBPct": "25.0",
+      "trackCPct": "0.0",
+      "overallPct": "22.2",
+      "overflowFreePct": "0.0",
+      "jsonPct": "66.7",
+      "mermaidPct": "0.0",
+      "htmlPct": "0.0"
+    },
+    "json_repair": {
+      "label": "json-repair (PyPI)",
+      "trackAPct": "41.7",
+      "trackBPct": "25.0",
+      "trackCPct": "0.0",
+      "overallPct": "22.2",
+      "overflowFreePct": "0.0",
+      "jsonPct": "66.7",
+      "mermaidPct": "0.0",
+      "htmlPct": "0.0"
+    },
+    "regex_baseline": {
+      "label": "Multi-Pass Regex Baseline",
+      "trackAPct": "46.5",
+      "trackBPct": "0.0",
+      "trackCPct": "0.0",
+      "overallPct": "15.5",
+      "overflowFreePct": "0.0",
+      "jsonPct": "26.3",
+      "mermaidPct": "40.3",
+      "htmlPct": "0.0"
+    },
+    "hm_pdt_rescan": {
+      "label": "HM-PDT (Full Re-Scan Ablation)",
+      "trackAPct": "100.0",
+      "trackBPct": "100.0",
+      "trackCPct": "100.0",
+      "overallPct": "100.0",
+      "overflowFreePct": "100.0",
+      "jsonPct": "100.0",
+      "mermaidPct": "100.0",
+      "htmlPct": "100.0"
+    },
+    "hm_pdt_inc": {
+      "label": "HM-PDT Incremental (Ours)",
+      "trackAPct": "100.0",
+      "trackBPct": "100.0",
+      "trackCPct": "100.0",
+      "overallPct": "100.0",
+      "overflowFreePct": "100.0",
+      "jsonPct": "100.0",
+      "mermaidPct": "100.0",
+      "htmlPct": "100.0"
+    }
+  }
+}

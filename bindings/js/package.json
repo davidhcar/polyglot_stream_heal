@@ -1,0 +1,59 @@
+{
+  "name": "polyglot-stream-heal",
+  "version": "1.0.0",
+  "description": "Ultra-fast 6us incremental streaming JSON repair, Mermaid diagram healer, and HTML5 sandbox balancer for LLM token streams (WebAssembly + TypeScript alternative to partial-json and jsonrepair)",
+  "license": "MIT",
+  "author": "David Charles Michael <davidchar@gmail.com> (https://orcid.org/0009-0007-8679-6941)",
+  "main": "./pkg/polyglot_stream_heal_wasm.js",
+  "types": "./pkg/polyglot_stream_heal_wasm.d.ts",
+  "files": [
+    "pkg/",
+    "README.md"
+  ],
+  "keywords": [
+    "llm",
+    "streaming",
+    "json-repair",
+    "jsonrepair",
+    "partial-json",
+    "best-effort-json-parser",
+    "streaming-json",
+    "incomplete-json",
+    "truncated-json",
+    "malformed-json",
+    "json-stream",
+    "mermaid",
+    "mermaid-parser",
+    "mermaid-repair",
+    "streaming-mermaid",
+    "markdown-stream",
+    "html-stream",
+    "sse",
+    "server-sent-events",
+    "openai",
+    "anthropic",
+    "gemini",
+    "vercel-ai-sdk",
+    "langchain",
+    "llamaindex",
+    "tool-calling",
+    "function-calling",
+    "structured-outputs",
+    "wasm",
+    "webassembly",
+    "rust",
+    "pushdown-transducer",
+    "pushdown-automaton",
+    "ai-agents",
+    "typescript"
+  ],
+  "homepage": "https://github.com/davidhcar/polyglot_stream_heal#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidhcar/polyglot_stream_heal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidhcar/polyglot_stream_heal/issues",
+    "email": "davidchar@gmail.com"
+  }
+}

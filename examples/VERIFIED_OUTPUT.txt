@@ -1,0 +1,35 @@
+=== 1. Incremental Polyglot Stream Healing (Rust) ===
+Live Architecture Overview:
+```mermaid
+flowchart LR
+  subgraph sg_Compute_Tier__v2_4 ["Compute Tier (v2.4)"]
+  A["Evaluate O(f(g(h(x))))"] -->|async batch| B[("Primary DB (Postgres: 16.4)")]
+  end
+```
+
+=== 2. Truncated Escaped Tool-Call JSON Repair ===
+Input : {"tool":"query_metrics","arguments":"{\"service\":\"gateway\",\"quantiles\":[0.5,0.99
+Healed: {"tool":"query_metrics","arguments":"{\"service\":\"gateway\",\"quantiles\":[0.5,0.99]}"}
+
+=== 3. Cardinality-Bounded Wide Table Partitioning (max_cols = 4) ===
+{"layout":"adaptive_vertical_stack","partitioned":true,"sections":[{"columns":["System","TrackA","TrackB","TrackC"],"partitionIndex":1,"partitionTotal":2,"rows":[["HM-PDT","100%","100%","100%"]],"title":"Engine Matrix (Part 1/2)"},{"columns":["System","Overall","p50_us","p99_us"],"partitionIndex":2,"partitionTotal":2,"rows":[["HM-PDT","100%","6.4","63.7"]],"title":"Engine Matrix (Part 2/2)"}]}
+
+=== 1. Stateful Streaming Transducer (Python PyO3) ===
+Active Segment Modality: json
+Healed JSON Content    : {"active":true,"p99_ms":12.0,"service":"router"}
+
+=== 2. Context-Free Mermaid Dyck Node Healing ===
+flowchart TD
+  subgraph sg_Shard_A__Primary__US ["Shard_A (Primary: US-East)"]
+  N1["Compute O(f(g(x)))"] -->|rpc| N2[("Ledger (v2)")]
+  end
+
+=== 1. Incremental SSE Chunk Healing (WebAssembly / npm) ===
+Modality       : dynamic_visual
+Was Partitioned: true
+Healed Payload : {"layout":"adaptive_vertical_stack","partitioned":true,"sections":[{"columns":["Engine","C1","C2","C3"],"partitionIndex":1,"partitionTotal":2,"rows":[["HM-PDT","1.1","1.2","1.3"]],"title":"Wide Latency Matrix (Part 1/2)"},{"columns":["Engine","C4","C5","C6"],"partitionIndex":2,"partitionTotal":2,"rows":[["HM-PDT","1.4","1.5","1.6"]],"title":"Wide Latency Matrix (Part 2/2)"}]}
+
+=== 2. Truncated HTML5 / Script Boundary Healing ===
+Input : <div class="widget"><script>function calc(x) { const s = "live_value
+Healed: <div class="widget"><script>function calc(x) { const s = "live_value"}
+</script></div>

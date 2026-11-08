@@ -1,0 +1,16 @@
+[package]
+name = "polyglot-stream-heal-wasm"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "WebAssembly / Node.js / Browser bindings for polyglot-stream-heal"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+polyglot-stream-heal = { path = "../polyglot-stream-heal" }
+wasm-bindgen = "0.2"
+serde_json = { workspace = true }

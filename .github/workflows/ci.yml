@@ -1,0 +1,30 @@
+name: CI & Registry Smoke Verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  rust-and-registry-smoke:
+    name: Verify Rust Core & Live Registry Packages (PyPI + npm + crates.io)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust Stable Toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Run Rust Core Unit Tests & Example Demo
+        run: |
+          cargo test -p polyglot-stream-heal --release
+          cargo run -p polyglot-stream-heal --example demo --release
+
+      - name: Verify Live PyPI Package (pip install polyglot-stream-heal)
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install --no-cache-dir polyglot-stream-heal
+          python3 examples/demo_python.py

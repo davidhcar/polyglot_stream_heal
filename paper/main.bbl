@@ -1,0 +1,85 @@
+\begin{thebibliography}{10}
+
+\bibitem{aho2006compilers}
+Alfred~V. Aho, Monica~S. Lam, Ravi Sethi, and Jeffrey~D. Ullman.
+\newblock {\em Compilers: Principles, Techniques, and Tools}.
+\newblock Addison-Wesley, 2nd edition, 2006.
+
+\bibitem{baccianella2024jsonrepair}
+Stefano Baccianella.
+\newblock {json-repair}: A {Python} module to repair invalid {JSON} from
+  {LLMs}, 2024.
+
+\bibitem{beurer2023prompting}
+Luca Beurer-Kellner, Marc Fischer, and Martin Vechev.
+\newblock Prompting is programming: A query language for {Large} {Language}
+  {Models}.
+\newblock In {\em Proceedings of the ACM on Programming Languages (PLDI)},
+  volume~7, pages 1946--1969, 2023.
+
+\bibitem{bray2017rfc8259}
+Tim Bray.
+\newblock The {JavaScript} {Object} {Notation} ({JSON}) data interchange
+  format.
+\newblock Technical Report RFC 8259, Internet Engineering Task Force, 2017.
+
+\bibitem{chomsky1963algebraic}
+Noam Chomsky and Marcel~P. Sch{\"u}tzenberger.
+\newblock The algebraic theory of context-free languages.
+\newblock In {\em Computer Programming and Formal Systems}, pages 118--161.
+  North-Holland, 1963.
+
+\bibitem{dong2024xgrammar}
+Yixin Dong, Charlie~F. Ruan, Yaxing Cai, Ruihang Lai, Ziyi Xu, Yilong Zhao, and
+  Tianqi Chen.
+\newblock {XGrammar}: Flexible and efficient structured generation engine for
+  {Large} {Language} {Models}.
+\newblock {\em arXiv preprint arXiv:2411.15100}, 2024.
+
+\bibitem{fischer1980locally}
+Charles~N. Fischer, Donn~R. Milton, and Sam~B. Quiring.
+\newblock Locally least-cost {LR} error repair.
+\newblock {\em ACM Transactions on Programming Languages and Systems},
+  2(2):233--263, 1980.
+
+\bibitem{hopcroft2006automata}
+John~E. Hopcroft, Rajeev Motwani, and Jeffrey~D. Ullman.
+\newblock {\em Introduction to Automata Theory, Languages, and Computation}.
+\newblock Addison-Wesley, 3rd edition, 2006.
+
+\bibitem{knuth1965translation}
+Donald~E. Knuth.
+\newblock On the translation of languages from left to right.
+\newblock {\em Information and Control}, 8(6):607--639, 1965.
+
+\bibitem{kwon2023efficient}
+Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody~Hao Yu,
+  Joseph Gonzalez, Hao Zhang, and Ion Stoica.
+\newblock Efficient memory management for {Large} {Language} {Model} serving
+  with {PagedAttention}.
+\newblock In {\em Proceedings of the 29th Symposium on Operating Systems
+  Principles (SOSP)}, pages 611--626, 2023.
+
+\bibitem{sipser2012introduction}
+Michael Sipser.
+\newblock {\em Introduction to the Theory of Computation}.
+\newblock Cengage Learning, 3rd edition, 2012.
+
+\bibitem{ugare2024syncode}
+Shubham Ugare, Tarun Suresh, Hangoo Kang, Sasa Misailovic, and Gagandeep Singh.
+\newblock {SynCode}: {LLM} generation with grammar augmentation.
+\newblock {\em arXiv preprint arXiv:2403.01632}, 2024.
+
+\bibitem{willard2023efficient}
+Brandon~T. Willard and R{\'e}mi Louf.
+\newblock Efficient guided generation for {Large} {Language} {Models}.
+\newblock {\em arXiv preprint arXiv:2307.09702}, 2023.
+
+\bibitem{zheng2024sglang}
+Lianmin Zheng, Liangsheng Yin, Zhiqiang Xie, Chuyue Sun, Jeff Huang, Cody~Hao
+  Yu, Shiyi Cao, Christos Kozyrakis, Ion Stoica, Joseph~E. Gonzalez, Clark
+  Barrett, and Ying Sheng.
+\newblock {SGLang}: Efficient execution of structured language model programs.
+\newblock {\em arXiv preprint arXiv:2312.07104}, 2024.
+
+\end{thebibliography}

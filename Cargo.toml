@@ -1,0 +1,20 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/polyglot-stream-heal",
+  "crates/polyglot-stream-heal-wasm",
+  "bindings/python",
+]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+authors = ["David Charles Michael <davidchar@gmail.com>"]
+license = "MIT"
+homepage = "https://github.com/davidhcar/polyglot_stream_heal"
+documentation = "https://docs.rs/polyglot-stream-heal"
+repository = "https://github.com/davidhcar/polyglot_stream_heal"
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

@@ -1,0 +1,79 @@
+[build-system]
+requires = ["maturin>=1.5,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "polyglot-stream-heal"
+version = "1.0.0"
+description = "Ultra-fast 6us incremental streaming JSON repair, Mermaid diagram healer, and HTML5 sandbox balancer for LLM token streams (60x faster drop-in alternative to json-repair and partial-json)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "David Charles Michael", email = "davidchar@gmail.com" }]
+maintainers = [{ name = "David Charles Michael", email = "davidchar@gmail.com" }]
+keywords = [
+  "llm",
+  "streaming",
+  "json-repair",
+  "partial-json",
+  "streaming-json",
+  "incomplete-json",
+  "truncated-json",
+  "malformed-json",
+  "json-parser",
+  "json-stream",
+  "mermaid",
+  "mermaid-parser",
+  "mermaid-repair",
+  "streaming-mermaid",
+  "markdown-stream",
+  "html-stream",
+  "sse",
+  "server-sent-events",
+  "openai",
+  "anthropic",
+  "gemini",
+  "langchain",
+  "llamaindex",
+  "vercel-ai-sdk",
+  "tool-calling",
+  "function-calling",
+  "structured-outputs",
+  "pushdown-transducer",
+  "pushdown-automaton",
+  "error-recovery",
+  "rust",
+  "pyo3",
+  "wasm",
+  "ai-agents"
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Rust",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development :: Compilers",
+  "Topic :: Text Processing :: Markup :: Markdown",
+  "Typing :: Typed"
+]
+
+[project.urls]
+Homepage = "https://github.com/davidhcar/polyglot_stream_heal"
+Repository = "https://github.com/davidhcar/polyglot_stream_heal"
+Documentation = "https://docs.rs/polyglot-stream-heal"
+"Author ORCID" = "https://orcid.org/0009-0007-8679-6941"
+"Companion Paper" = "https://github.com/davidhcar/polyglot_stream_heal/blob/main/paper/paper.pdf"
+
+[tool.maturin]
+module-name = "polyglot_stream_heal"
+bindings = "pyo3"
+strip = true

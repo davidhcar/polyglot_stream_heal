@@ -1,0 +1,9 @@
+{
+  "name": "polyglot-stream-bench-1800",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "partial-json": "^0.1.7"
+  }
+}

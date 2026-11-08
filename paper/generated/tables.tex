@@ -1,0 +1,44 @@
+% AUTO-GENERATED FROM results/metrics.json — DO NOT EDIT MANUALLY
+
+\begin{table*}[t]
+  \centering
+  \small
+  \caption{End-to-end parse validity (\%), zero-overflow invariant compliance (\%), and streaming latency across PolyglotStreamBench-1800 (N = 1,800 streams across 3 tracks).}
+  \label{tab:main_results}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lrrrrrrr}
+    \toprule
+    \textbf{System / Baseline} & \textbf{Track A (\%)} & \textbf{Track B (\%)} & \textbf{Track C (\%)} & \textbf{Overall (\%)} & \textbf{Zero-Overflow (\%)} & \textbf{p50 (us)} & \textbf{p99 (us)} \\
+    \midrule
+    Raw Unhealed Stream & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 & 0.0 \\
+    partial-json (npm) & 41.7 & 25.0 & 0.0 & 22.2 & 0.0 & 38.1 & 222.8 \\
+    json-repair (PyPI) & 41.7 & 25.0 & 0.0 & 22.2 & 0.0 & 386.8 & 1858.7 \\
+    Multi-Pass Regex Baseline & 46.5 & 0.0 & 0.0 & 15.5 & 0.0 & 20.2 & 116.1 \\
+\midrule
+    HM-PDT (Full Re-Scan Ablation) & 100.0 & 100.0 & 100.0 & 100.0 & 100.0 & 54.8 & 1516.2 \\
+    \textbf{HM-PDT Incremental (Ours)} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} & \textbf{6.3} & \textbf{57.3} \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table*}
+
+\begin{table}[t]
+  \centering
+  \small
+  \caption{Per-modality grammar validity (\%) on single-DSL tracks (Tracks A + B, N = 1,200).}
+  \label{tab:modality_breakdown}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{lrrr}
+    \toprule
+    \textbf{System} & \textbf{JSON + Escaped Tool (\%)} & \textbf{Mermaid 14-DSL (\%)} & \textbf{HTML5 Sandbox (\%)} \\
+    \midrule
+    Raw Unhealed & 0.0 & 0.0 & 0.0 \\
+    partial-json (npm) & 66.7 & 0.0 & 0.0 \\
+    json-repair (PyPI) & 66.7 & 0.0 & 0.0 \\
+    Regex Baseline & 26.3 & 40.3 & 0.0 \\
+\midrule
+    \textbf{HM-PDT Incremental (Ours)} & \textbf{100.0} & \textbf{100.0} & \textbf{100.0} \\
+    \bottomrule
+  \end{tabular}
+  }
+\end{table}
