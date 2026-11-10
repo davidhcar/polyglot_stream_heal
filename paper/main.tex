@@ -1,7 +1,6 @@
 \documentclass[10pt,twocolumn]{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage{mathptmx}
 \usepackage[margin=0.78in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
@@ -61,7 +60,7 @@ At this exact packet boundary, three distinct failures converge. First, the stre
 
 More broadly, progressive rendering of polyglot LLM streams exposes three coupled systems challenges:
 \begin{enumerate}[leftmargin=*,nosep]
-  \item \textbf{Mid-Token Prefix Incompleteness Across Interleaved Grammars:} At every streaming step $t < T$, the received prefix $S_t$ terminates at an arbitrary byte offset, potentially splitting a multi-byte UTF-8 codepoint, an escaped JSON tool-call string, a Mermaid subgraph, or an inline \texttt{<script>} tag. Single-grammar utilities such as \texttt{json-repair}~\cite{baccianella2024jsonrepair} and \texttt{partial-json} assume homogeneous JSON inputs and cannot parse polyglot Markdown streams.
+  \item \textbf{Mid-Token Prefix Incompleteness Across Interleaved Grammars:} At every streaming step $t < T$, the received prefix $S_t$ terminates at an arbitrary byte offset, potentially splitting a multi-byte UTF-8 codepoint, an escaped JSON tool-call string, a Mermaid subgraph, or an inline \texttt{\textless{}script\textgreater{}} tag. Single-grammar utilities such as \texttt{json-repair}~\cite{baccianella2024jsonrepair} and \texttt{partial-json} assume homogeneous JSON inputs and cannot parse polyglot Markdown streams.
   \item \textbf{Context-Free Syntactic Perturbations Beyond Regular Languages:} Even after generation completes, LLMs frequently emit unquoted nested parentheses inside diagram node shapes, such as \texttt{A[Compute O(f(g(x)))] --> B[(Primary DB (v16))]}, or omit closing \texttt{end} keywords on nested \texttt{subgraph} and \texttt{loop} blocks. Client pipelines built on cascading regular expressions either mis-match inner delimiters prematurely or suffer backtracking stalls.
   \item \textbf{Quadratic Re-Scanning and Viewport Overflow:} Stateless streaming healers re-parse the entire accumulated prefix $S_t$ on every token arrival, performing $\Theta(N^2)$ cumulative work over an $N$-token response. Moreover, even when a JSON table is syntactically valid, schemas containing $C \gg 5$ columns force horizontal scrolling and clip cell text on standard viewports.
 \end{enumerate}
@@ -72,7 +71,7 @@ Server-side grammar-constrained decoding engines such as Outlines~\cite{willard2
 In this paper, we connect classical pushdown automata theory with low-latency systems engineering through four contributions:
 \begin{itemize}[leftmargin=*,nosep]
   \item \textbf{Formal Impossibility \& Asymptotic Analysis (\S\ref{sec:theory}):} We formulate polyglot stream repair as a \emph{Hierarchical Multi-Grammar Pushdown Transducer (HM-PDT)} and establish three theoretical results: finite-state regular-expression pipelines cannot heal arbitrary-depth nested node delimiters (Theorem~\ref{thm:pumping}); persistent incremental state reduces cumulative streaming work from $\Theta(N^2)$ to $\Theta(N)$ (Theorem~\ref{thm:complexity}); and stack-driven suffix synthesis produces valid RFC~8259 and DSL closures in $O(d)$ time (Theorem~\ref{thm:soundness}).
-  \item \textbf{Incremental Polyglot Pushdown Architecture (\S\ref{sec:arch}):} We design a deterministic outer fence discriminator covering 24 modality tags paired with $O(|\Delta s_t|)$ inner pushdown automata for JSON (including recursive escaped tool-call strings), 14 Mermaid sub-grammars, and HTML5/CSS/JS sandboxes, complete with stateful UTF-8 split-byte reassembly.
+  \item \textbf{Incremental Polyglot Pushdown Architecture (\S\ref{sec:arch}):} We design a deterministic outer fence discriminator covering 24 modality tags paired with $O(|\delta s_t|)$ inner pushdown automata for JSON (including recursive escaped tool-call strings), 14 Mermaid sub-grammars, and HTML5/CSS/JS sandboxes, complete with stateful UTF-8 split-byte reassembly.
   \item \textbf{Cardinality-Bounded Layout Partitioning (\S\ref{sec:partition}):} We introduce a lossless schema-level partitioner that splits wide tables ($C > C_{\max}$) into anchor-preserving vertical sub-tables and dense charts ($B > B_{\max}$) into bounded segments without dropping cells.
   \item \textbf{Tri-Registry Open-Source Engine \& Evaluation (\S\ref{sec:impl}--\ref{sec:eval}):} We release \texttt{polyglot-stream-heal} in safe Rust with native \texttt{PyO3} (\texttt{PyPI}) and \texttt{wasm-bindgen} (\texttt{npm}) bindings. Across the 1,800-stream \texttt{PolyglotStreamBench-1800} benchmark, it reaches $\OursOverallValidPct$ validity at $\OursChunkPFiftyUs\,\mu\text{s}$ median per-chunk latency.
 \end{itemize}
@@ -80,7 +79,7 @@ In this paper, we connect classical pushdown automata theory with low-latency sy
 \section{Formal Model and Theoretical Foundations}
 \label{sec:theory}
 
-Let $\Sigma$ denote the Unicode scalar alphabet (received over wire chunks of raw bytes in $\{0,\dots,255\}^*$ with stateful UTF-8 boundary reassembly). A streaming LLM response is a sequence of non-empty chunks $\Delta s_1, \Delta s_2, \dots, \Delta s_K \in \Sigma^+$ arriving at discrete epochs $t \in \{1,\dots,K\}$, forming cumulative prefixes $S_t = \Delta s_1 \cdots \Delta s_t$ of total length $N = |S_K|$. A polyglot document consists of interleaved prose segments in $L_{\text{md}}$ and structured blocks drawn from a family of context-free DSL grammars $\{G_1, \dots, G_M\}$ delimited by triple-backtick code fences (\texttt{\textasciigrave\textasciigrave\textasciigrave}$\tau_m$).
+Let $\Sigma$ denote the Unicode scalar alphabet (received over wire chunks of raw bytes in $\{0,\dots,255\}^*$ with stateful UTF-8 boundary reassembly). A streaming LLM response is a sequence of non-empty chunks $\delta s_1, \delta s_2, \dots, \delta s_K \in \Sigma^+$ arriving at discrete epochs $t \in \{1,\dots,K\}$, forming cumulative prefixes $S_t = \delta s_1 \cdots \delta s_t$ of total length $N = |S_K|$. A polyglot document consists of interleaved prose segments in $L_{\text{md}}$ and structured blocks drawn from a family of context-free DSL grammars $\{G_1, \dots, G_M\}$ delimited by triple-backtick code fences (\texttt{\textasciigrave\textasciigrave\textasciigrave}$\tau_m$).
 
 \begin{definition}[Hierarchical Multi-Grammar Pushdown Transducer]
 \label{def:hmpdt}
