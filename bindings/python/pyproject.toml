@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "polyglot-stream-heal"
-version = "1.0.0"
+version = "1.0.1"
 description = "Ultra-fast 6us incremental streaming JSON repair, Mermaid diagram healer, and HTML5 sandbox balancer for LLM token streams (60x faster drop-in alternative to json-repair and partial-json)"
 readme = "README.md"
 requires-python = ">=3.9"

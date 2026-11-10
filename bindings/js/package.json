@@ -1,6 +1,6 @@
 {
   "name": "polyglot-stream-heal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Ultra-fast 6us incremental streaming JSON repair, Mermaid diagram healer, and HTML5 sandbox balancer for LLM token streams (WebAssembly + TypeScript alternative to partial-json and jsonrepair)",
   "license": "MIT",
   "author": "David Charles Michael <davidchar@gmail.com> (https://orcid.org/0009-0007-8679-6941)",
