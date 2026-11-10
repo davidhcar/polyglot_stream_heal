@@ -656,6 +656,9 @@ const metricsPayload = {
     PartialJsonPFiftyUs: `${partialJsonTiming.p50_us.toFixed(1)}`,
     ScalingSpeedupThirtyTwoKB: `${speedup32Kb}x`,
     PyVsOursSpeedup: `${pyVsOursSpeedup}x`,
+    ScaleIncThirtyTwoKBMs: `${scalingIncPoints[scalingIncPoints.length - 1][1].toFixed(2)}`,
+    ScaleRescanThirtyTwoKBMs: `${scalingRescanPoints[scalingRescanPoints.length - 1][1].toFixed(2)}`,
+    ScaleRegexThirtyTwoKBMs: `${scalingRegexPoints[scalingRegexPoints.length - 1][1].toFixed(2)}`,
   },
   tables: [
     {

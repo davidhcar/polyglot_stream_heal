@@ -18,7 +18,10 @@
     "JsonRepairPFiftyUs": "386.8",
     "PartialJsonPFiftyUs": "38.1",
     "ScalingSpeedupThirtyTwoKB": "264.2x",
-    "PyVsOursSpeedup": "61.3x"
+    "PyVsOursSpeedup": "61.3x",
+    "ScaleIncThirtyTwoKBMs": "7.16",
+    "ScaleRescanThirtyTwoKBMs": "1891.76",
+    "ScaleRegexThirtyTwoKBMs": "572.61"
   },
   "tables": [
     {
