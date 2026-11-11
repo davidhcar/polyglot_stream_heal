@@ -1,5 +1,6 @@
 use polyglot_stream_heal::{
-    heal_json, partition_visual_spec, IncrementalTransducer, TransducerConfig,
+    heal_html, heal_json, heal_mermaid, partition_visual_spec, IncrementalTransducer,
+    TransducerConfig,
 };
 
 fn main() {
@@ -23,8 +24,16 @@ fn main() {
     println!("Input : {}", truncated_tool);
     println!("Healed: {}\n", healed_tool);
 
-    println!("=== 3. Cardinality-Bounded Wide Table Partitioning (max_cols = 4) ===");
+    println!("=== 3. Context-Free Mermaid Dyck Parentheses & Subgraph Healing ===");
+    let raw_mermaid = "flowchart TD\n  subgraph Shard_A (Primary: US-East)\n    N1[Compute O(f(g(x)))] --> N2[(Ledger (v2))]";
+    println!("Healed Mermaid:\n{}\n", heal_mermaid(raw_mermaid));
+
+    println!("=== 4. Streaming HTML5 / JavaScript Sandbox Boundary Healing ===");
+    let raw_html = "<div class=\"widget\"><script>function calc(x) { const s = \"streaming_val";
+    println!("Healed HTML5:\n{}\n", heal_html(raw_html));
+
+    println!("=== 5. Cardinality-Bounded Wide Table Partitioning (max_cols = 4) ===");
     let wide_table = r#"{"title":"Engine Matrix","columns":["System","TrackA","TrackB","TrackC","Overall","p50_us","p99_us"],"rows":[["HM-PDT","100%","100%","100%","100%","6.4","63.7"]]}"#;
     let partitioned = partition_visual_spec(wide_table, 4, 10).unwrap();
-    println!("{}", partitioned);
+    println!("{}\n", partitioned);
 }

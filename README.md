@@ -2,7 +2,7 @@
 
 **Ultra-fast $6.3\,\mu\text{s}$ incremental $O(n)$ streaming JSON repair, 14-dialect Mermaid diagram healer, HTML5 sandbox balancer, and cardinality-bounded layout partitioner for Large Language Model (LLM) token streams.**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24045975.svg)](https://doi.org/10.5281/zenodo.24045975)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24096219.svg)](https://doi.org/10.5281/zenodo.24096219)
 [![Crates.io](https://img.shields.io/crates/v/polyglot-stream-heal.svg)](https://crates.io/crates/polyglot-stream-heal)
 [![Crates.io Downloads](https://img.shields.io/crates/d/polyglot-stream-heal.svg?label=crates.io%20downloads)](https://crates.io/crates/polyglot-stream-heal)
 [![PyPI](https://img.shields.io/pypi/v/polyglot-stream-heal.svg)](https://pypi.org/project/polyglot-stream-heal/)
@@ -12,7 +12,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/davidhcar/polyglot_stream_heal/blob/main/examples/colab_quickstart.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-- **Author:** **David Charles Michael** ([ORCID: `0009-0007-8679-6941`](https://orcid.org/0009-0007-8679-6941) | [DOI: `10.5281/zenodo.24045975`](https://doi.org/10.5281/zenodo.24045975) | `davidchar@gmail.com`)
+- **Author:** **David Charles Michael** ([ORCID: `0009-0007-8679-6941`](https://orcid.org/0009-0007-8679-6941) | [DOI: `10.5281/zenodo.24096219`](https://doi.org/10.5281/zenodo.24096219) | `davidchar@gmail.com`)
 - **Drop-In High-Speed Replacement For:** `json-repair` (Python), `partial-json` (npm/Python), `jsonrepair` (JS/TS), and brittle regex Mermaid/Markdown stream sanitizers.
 - **Compatible With All Streaming LLM SDKs:** OpenAI (`chat.completions.create(stream=True)`), Anthropic Claude SSE streams, Google Gemini streaming, Vercel AI SDK (`useChat` / `streamText`), LangChain (`astream_events`), LlamaIndex, vLLM, and Ollama.
 
@@ -30,6 +30,18 @@
 | **14 Mermaid Diagram Dialects (Nested Dyck Labels)** | **100.0%** | Not Supported (0%) | Not Supported (0%) | 40.3% |
 | **Streaming HTML5 / `<script>` / `<style>` Closure** | **100.0%** | Not Supported (0%) | Not Supported (0%) | Fails (0%) |
 | **Wide Table & Bar Chart Overflow Partitioning** | **100.0%** | Not Supported (0%) | Not Supported (0%) | Not Supported (0%) |
+
+---
+
+## 5 Core Capabilities & Input-Output Showcase
+
+| Modality / Feature | Truncated / Perturbed LLM Input | Deterministically Healed Output |
+| :--- | :--- | :--- |
+| **1. Recursive Tool-Call JSON** (OpenAI / Anthropic / MCP) | `{"name":"search","arguments":"{\"query\":\"rust pda` | `{"name":"search","arguments":"{\"query\":\"rust pda\"}"}` |
+| **2. Context-Free Mermaid Dyck** (Nested Shapes & Subgraphs) | `flowchart TD\n subgraph DB\n A[Task O(f(g(x)))] --> B[(Log` | `flowchart TD\n subgraph DB\n A["Task O(f(g(x)))"] --> B[("Log")]\n end` |
+| **3. Streaming HTML5 / JS Sandbox** (Interactive Web Widgets) | `<div class="card"><script>const val = "stream` | `<div class="card"><script>const val = "stream";</script></div>` |
+| **4. Cardinality Layout Partition** (Zero-Overflow Tables) | 7-column schema ($C > C_{\max} = 4$) | Decomposed into 2 stacked sub-tables, **anchoring Entity Col 0**. |
+| **5. Linear-Time Incremental Stream** (Token-by-Token SSE) | Raw 15–40 ms byte packets with mid-stream truncations | $\Theta(N)$ optimal cumulative work ($p50 = 6.3\,\mu\text{s}$ per chunk). |
 
 ---
 
@@ -104,8 +116,8 @@ See [`CITATION.cff`](CITATION.cff), or cite:
   title   = {Linear-Time Incremental Pushdown Transduction and Cardinality-Bounded Layout Partitioning for Polyglot LLM Token Streams},
   author  = {Michael, David Charles},
   year    = {2026},
-  doi     = {10.5281/zenodo.24045975},
-  url     = {https://doi.org/10.5281/zenodo.24045975},
+  doi     = {10.5281/zenodo.24096219},
+  url     = {https://doi.org/10.5281/zenodo.24096219},
   note    = {ORCID: 0009-0007-8679-6941}
 }
 ```
